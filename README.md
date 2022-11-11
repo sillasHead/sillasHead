@@ -20,10 +20,10 @@
   <img align="center" alt="angular" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg"/>
   <img align="center" alt="node" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"/>
   <img align="center" alt="spring" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg"/>
+  <img align="center" alt="quarkus" height="40" width="50" src="https://www.svgrepo.com/show/354245/quarkus-icon.svg"/>
   <img align="center" alt="mysql" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"/>
   <img align="center" alt="postgresql" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"/>
   <img align="center" alt="mongodb" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"/>
-  <img align="center" alt="figma" height="40" width="50" src="https://www.svgrepo.com/show/354245/quarkus-icon.svg"/>
 </div>
 
 ##
