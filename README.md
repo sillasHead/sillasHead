@@ -1,55 +1,24 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/boot-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/boot-light.svg">
-  <img alt="SILLAS//HEAD — personal firmware. Fictional boot sequence and pixel-art resident." src="./assets/boot-dark.svg" width="100%">
+  <img width="100%" src="./assets/boot-dark.svg" alt="SILLAS//HEAD personal firmware. Boot console, curiosity and automation meters, sleep overflowing the monitor, pixel-art inventory and two incident reports: I automate the boring parts so I can waste time on more sophisticated problems. If &quot;it works&quot; is an architecture, duct tape is an enterprise framework.">
 </picture>
 
 <div align="center">
 
-`PERSONAL FIRMWARE` · `UNSTABLE BY DESIGN` · `NO TELEMETRY*`
-
-<sub>*except the suspicious amount of telemetry GitHub already has.</sub>
+[ `01 / OPEN A CHANNEL` ](mailto:sillas.ap16@gmail.com) &nbsp;·&nbsp; [ `02 / EXTERNAL NETWORK` ](https://www.linkedin.com/in/sillashead/)
 
 </div>
-
-### `> open /dev/curiosity`
-
-I like interfaces that feel alive, automation that deletes boring work,
-hardware that can be tinkered with, AI that can be questioned, and games and anime
-that make reality look under-designed.
-
-I build things, break assumptions, overthink tiny details, and occasionally
-remember that **README files were supposed to be documentation**.
-
-```text
-signal://sillasHead
-├─ mode ............. curious
-├─ bias ............. build > talk
-├─ side_quests ...... hardware / AI / automation / games / anime
-└─ status ........... probably refactoring something
-```
 
 <details>
-<summary><code>./transmission.log</code> — click to decrypt</summary>
+<summary><code>03 / ACCESS RESTRICTED TRANSMISSION</code></summary>
 
-<br>
+```text
+ACCESS GRANTED.
+There is no secret.
 
-> Not a résumé. Not a skill cloud. Not a dashboard.
->
-> This profile is a tiny piece of software pretending to be a README.
-
-If something here looks slightly unnecessary, that is probably the point.
+The real Easter egg was the unreasonable
+amount of effort spent on a README.
+```
 
 </details>
-
-<br>
-
-<div align="center">
-
-**[LINKEDIN](https://www.linkedin.com/in/sillashead/)** ·
-**[EMAIL](mailto:sillas.ap16@gmail.com)**
-
-<sub>PRESS ANY KEY TO CONTINUE — unfortunately this is Markdown,
-so clicking around is the closest thing.</sub>
-
-</div>
