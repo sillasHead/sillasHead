@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/firmware-v002-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/firmware-v002-light.svg">
-  <img width="100%" src="./assets/firmware-v002-dark.svg" alt="SILLAS//HEAD personal firmware. Boot console, curiosity and automation meters, sleep overflowing the monitor, pixel-art inventory and two incident reports: I automate the boring parts so I can waste time on more sophisticated problems. If &quot;it works&quot; is an architecture, duct tape is an enterprise framework.">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/firmware-v003-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/firmware-v003-light.svg">
+  <img width="100%" src="./assets/firmware-v003-dark.svg" alt="SILLAS//HEAD personal firmware. Boot console, curiosity and automation meters, sleep overflowing the monitor, pixel-art inventory with a chess piece, Rubik's cube, guitar and Sharingan and two incident reports: I automate the boring parts so I can waste time on more sophisticated problems. If &quot;it works&quot; is an architecture, duct tape is an enterprise framework.">
 </picture>
 
 <div align="center">
