@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[ `01 / OPEN A CHANNEL` ](mailto:sillas.ap16@gmail.com) &nbsp;·&nbsp; [ `02 / EXTERNAL NETWORK` ](https://www.linkedin.com/in/sillashead/)
+[ `ESTABLISH CONNECTION // LINKEDIN` ](https://www.linkedin.com/in/sillashead/)
 
 </div>
 
