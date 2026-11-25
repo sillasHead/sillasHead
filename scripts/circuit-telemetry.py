@@ -28,7 +28,7 @@ metrics = [
     ("REVIEWS", stats["totalPullRequestReviewContributions"]),
 ]
 metrics = [(label, value) for label, value in metrics if value >= 10]
-for path in Path("dist").glob("circuit-v2-dark.svg"):
+for path in Path("dist").glob("circuit-v3-dark.svg"):
     source = path.read_text()
     root = ET.fromstring(source)
     width, height = map(float, root.attrib["viewBox"].split()[2:])
@@ -56,7 +56,8 @@ for path in Path("dist").glob("circuit-v2-dark.svg"):
                       f'<text x="{x+8}" y="42" font-size="9" fill="{muted}">{label}</text>'
                       f'<text x="{x+8}" y="61" font-size="17" font-weight="bold" fill="{fg}">{value:,}</text></g>')
     pieces.append('</g>')
-    # Nest the original SVG intact, preserving its viewBox and CSS transforms.
-    source = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height+header}" viewBox="0 0 {width} {height+header}" role="img" aria-label="GitHub contribution circuit and last-year activity metrics">' + "".join(pieces) + f'<g transform="translate(0 {header})">'+source+'</g></svg>'
+    # Keep one SVG root; move the original drawing into a translated group.
+    body = source[source.index(">")+1:source.rindex("</svg>")]
+    source = f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height+header}" viewBox="0 0 {width} {height+header}" role="img" aria-label="GitHub contribution circuit and last-year activity metrics">' + "".join(pieces) + f'<g transform="translate(0 {header})">'+body+'</g></svg>'
     ET.fromstring(source)
     path.write_text(source)
