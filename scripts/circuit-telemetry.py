@@ -27,7 +27,8 @@ metrics = [
     ("ISSUES", stats["totalIssueContributions"]),
     ("REVIEWS", stats["totalPullRequestReviewContributions"]),
 ]
-for path in Path("dist").glob("circuit-v1-*.svg"):
+metrics = [(label, value) for label, value in metrics if value >= 10]
+for path in Path("dist").glob("circuit-v2-dark.svg"):
     source = path.read_text()
     root = ET.fromstring(source)
     width, height = map(float, root.attrib["viewBox"].split()[2:])
@@ -37,14 +38,15 @@ for path in Path("dist").glob("circuit-v1-*.svg"):
         ("#edf0e7", "#9baea5", "#172d2b", "#45625d", "#176b40")
     )
     pad = 12
-    header = 88
+    header = 88 if metrics else 34
     gap = 9
-    cw = (width - 2*pad - 4*gap)/5
+    count = len(metrics)
+    cw = (width - 2*pad - max(0, count-1)*gap)/max(1, count)
     pieces = [
         f'<rect x="1" y="1" width="{width-2}" height="{height+header-2}" rx="7" fill="{bg}" stroke="{border}"/>',
         f'<g font-family="monospace"><text x="12" y="20" font-size="12" fill="{accent}" letter-spacing="1.4">05 / ACTIVITY BUS</text>',
         f'<text x="{width-12}" y="20" text-anchor="end" font-size="10" fill="{muted}">GITHUB / LAST YEAR</text>',
-        f'<path d="M12 76H{width-12}" stroke="{border}" fill="none"/>',
+        f'<path d="M12 {76 if metrics else 28}H{width-12}" stroke="{border}" fill="none"/>',
     ]
     for i, (label, value) in enumerate(metrics):
         x = pad+i*(cw+gap)

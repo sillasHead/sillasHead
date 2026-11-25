@@ -30,8 +30,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           github_token: ${{ github.token }}
           outputs: |
-            dist/circuit-v1-light.svg?theme=circuit&mode=light
-            dist/circuit-v1-dark.svg?theme=circuit&mode=dark
+            dist/circuit-v2-dark.svg?theme=circuit&mode=dark
       - name: Integrate activity telemetry
         env:
           GH_TOKEN: ${{ github.token }}
@@ -43,8 +42,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test -s dist/circuit-v1-light.svg
-          test -s dist/circuit-v1-dark.svg
+          test -s dist/circuit-v2-dark.svg
           out="$(mktemp -d)"
           git init -q "$out"
           git -C "$out" remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -54,8 +52,8 @@ jobs:
           else
             git -C "$out" switch --orphan output
           fi
-          cp dist/circuit-v1-*.svg "$out/"
-          git -C "$out" add circuit-v1-light.svg circuit-v1-dark.svg
+          cp dist/circuit-v2-dark.svg "$out/"
+          git -C "$out" add circuit-v2-dark.svg
           if git -C "$out" diff --cached --quiet; then exit 0; fi
           git -C "$out" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh contribution animation'
           git -C "$out" push origin HEAD:output
