@@ -28,8 +28,8 @@ amount of effort spent on a README.
 <div align="center">
 
 <a href="https://github.com/Sur1ive/contribution-fx">
-  <img width="100%" alt="Animated contribution activity" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx-v2-dark.svg#gh-dark-mode-only">
-  <img width="100%" alt="Animated contribution activity" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx-v2.svg#gh-light-mode-only">
+  <img width="100%" alt="Circuit board: GitHub contribution activity and last-year telemetry" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/circuit-v1-dark.svg#gh-dark-mode-only">
+  <img width="100%" alt="Circuit board: GitHub contribution activity and last-year telemetry" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/circuit-v1-light.svg#gh-light-mode-only">
 </a>
 
 </div>
