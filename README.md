@@ -9,7 +9,7 @@
 <details>
 <summary>───[ <strong><code>🔒 / ACCESS RESTRICTED</code></strong> ]───</summary>
 
-<p><code>ACCESS GRANTED.</code><br>There is no secret.<br><small><i>The real Easter egg was the unreasonable amount of effort spent on a README.</i></small></p>
+<img width="620" src="./assets/transmission-text-v2.svg" alt="Access granted. There is no secret. The real Easter egg was the unreasonable amount of effort spent on a README.">
 
 </details>
 
