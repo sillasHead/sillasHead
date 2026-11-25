@@ -7,11 +7,9 @@
 [**`ESTABLISH CONNECTION // LINKEDIN`**](https://www.linkedin.com/in/sillashead/)
 
 <details>
-<summary><sub><code>───[</code></sub> <strong><code>🔒 / ACCESS RESTRICTED</code></strong> <sub><code>]───</code></sub></summary>
+<summary>───[ <strong><code>🔒 / ACCESS RESTRICTED</code></strong> ]───</summary>
 
-<p><code>ACCESS GRANTED.</code><br>
-There is no secret.<br>
-<sub><i>The real Easter egg was the unreasonable amount of effort spent on a README.</i></sub></p>
+<p><code>ACCESS GRANTED.</code><br>There is no secret.<br><small><i>The real Easter egg was the unreasonable amount of effort spent on a README.</i></small></p>
 
 </details>
 
