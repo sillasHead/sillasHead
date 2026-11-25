@@ -1,0 +1,52 @@
+name: Contribution FX
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main, profile/personal-firmware]
+    paths: ['.github/workflows/contribution-fx.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-fx-output
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate animated contribution SVGs
+        uses: Sur1ive/contribution-fx@0c7303e3949901701337755cacef30ba2674130b # v1.3.1
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ github.token }}
+          outputs: |
+            dist/contribution-fx.svg?theme=fx2&mode=light
+            dist/contribution-fx-dark.svg?theme=fx2&mode=dark
+      - name: Publish generated assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s dist/contribution-fx.svg
+          test -s dist/contribution-fx-dark.svg
+          out="$(mktemp -d)"
+          git init -q "$out"
+          git -C "$out" remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git -C "$out" ls-remote --exit-code --heads origin output >/dev/null; then
+            git -C "$out" fetch --depth=1 origin output
+            git -C "$out" switch -c output FETCH_HEAD
+          else
+            git -C "$out" switch --orphan output
+          fi
+          cp dist/contribution-fx*.svg "$out/"
+          git -C "$out" add contribution-fx.svg contribution-fx-dark.svg
+          if git -C "$out" diff --cached --quiet; then exit 0; fi
+          git -C "$out" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh contribution animation'
+          git -C "$out" push origin HEAD:output
