@@ -26,16 +26,31 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           github_token: ${{ github.token }}
           outputs: |
-            dist/contribution-fx.svg?theme=fx2&mode=light
-            dist/contribution-fx-dark.svg?theme=fx2&mode=dark
+            dist/contribution-fx-v2.svg?theme=fx2&mode=light
+            dist/contribution-fx-v2-dark.svg?theme=fx2&mode=dark
+      - name: Normalize chart colors and hide stock ticker
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          for p in Path('dist').glob('contribution-fx*.svg'):
+              s = p.read_text()
+              s = re.sub(r'<text class="kh"[^>]*>\$[^<]*</text>', '', s)
+              s = re.sub(r'<g class="kh(?: kr)?"[^>]*>.*?</g>', '', s, flags=re.S)
+              # Explicit fill for empty cells also in declining weeks.
+              empty = '#161b22' if '-dark' in p.name else '#ebedf0'
+              s = re.sub(r'(<rect\b[^>]*class="l0 kx"[^>]*style=")([^"]*)(")', lambda m: m[1]+m[2]+(';--g:'+empty+';--r:'+empty if '--g:' not in m[2] else '')+m[3], s)
+              p.write_text(s)
+          PY
       - name: Publish generated assets
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          test -s dist/contribution-fx.svg
-          test -s dist/contribution-fx-dark.svg
+          test -s dist/contribution-fx-v2.svg
+          test -s dist/contribution-fx-v2-dark.svg
           out="$(mktemp -d)"
           git init -q "$out"
           git -C "$out" remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -46,7 +61,7 @@ jobs:
             git -C "$out" switch --orphan output
           fi
           cp dist/contribution-fx*.svg "$out/"
-          git -C "$out" add contribution-fx.svg contribution-fx-dark.svg
+          git -C "$out" add contribution-fx-v2.svg contribution-fx-v2-dark.svg
           if git -C "$out" diff --cached --quiet; then exit 0; fi
           git -C "$out" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh contribution animation'
           git -C "$out" push origin HEAD:output

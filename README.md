@@ -10,14 +10,7 @@
 
 </div>
 
-<div align="center">
 
-<a href="https://github.com/Sur1ive/contribution-fx"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx-dark.svg">
-  <img width="100%" alt="Animated contribution activity — fictional candlestick chart, not financial data" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx.svg">
-</picture></a>
-
-</div>
 
 <details>
 <summary><code>03 / ACCESS RESTRICTED TRANSMISSION</code></summary>
@@ -31,3 +24,12 @@ amount of effort spent on a README.
 ```
 
 </details>
+
+<div align="center">
+
+<a href="https://github.com/Sur1ive/contribution-fx"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx-v2-dark.svg">
+  <img width="100%" alt="Animated contribution activity — fictional candlestick chart, not financial data" src="https://raw.githubusercontent.com/sillasHead/sillasHead/output/contribution-fx-v2.svg">
+</picture></a>
+
+</div>
